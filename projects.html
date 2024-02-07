@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo-mail">
+        <button>
+          <img
+            src="./images/format_align_left.svg"
+            class="menu-handler"
+            alt="align button"
+            title="Toggle Menu"
+          />
+        </button>
+        <h1>Laszlo Varga</h1>
+        <div class="envelope">
+          <button><img src="./images/mail.svg" alt="envelope icon" /></button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <a href="./index.html"
+                ><img src="./images/home.svg" alt="home icon" />Home</a
+              >
+            </li>
+            <li>
+              <a href="./about.html"
+                ><img src="./images/person.svg" alt="person icon" />About</a
+              >
+            </li>
+            <li>
+              <a href="./" class="active"
+                ><img
+                  src="./images/design_services.svg"
+                  alt="projects icon"
+                />Projects</a
+              >
+            </li>
+            <li>
+              <a href=""
+                ><img src="./images/mail.svg" alt="envelope icon" />Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="container">
+        <p class="intro-par">Here Are a Few Projects I Have Worked On.</p>
+        <p class="intro-par">
+          <span>Please Note:</span> The interactive feature is only functional
+          on screens with a width of 1200 pixels or more.
+        </p>
+        <section class="projects-card">
+          <div class="project-name-button">
+            <h2>Ozone Master</h2>
+            <button class="switch ozone-switch">
+              Interactive mode <span>OFF</span>
+            </button>
+          </div>
+          <div class="ozone-interactive">
+            <img
+              src="./images/ozonemaster.webp"
+              alt="ozone master"
+              class="ozone-image"
+            />
+            <div class="ozone-monitor">
+              <div class="iframe-container">
+                <iframe class="ozone-iframe"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="objectives">
+            <p>Objectives:</p>
+            <p>To create a strong online presence for a startup</p>
+          </div>
+          <p class="projects-par">
+            I've developed and optimized their first website which was an SPA
+            with HTML5 CSS and Javascript.
+          </p>
+          <p class="projects-par">
+            Several months later I have updated their website with more content
+            and made it a multipage site.
+          </p>
+          <p class="projects-par">
+            The current is the third version, created with Next.js.
+          </p>
+          <p class="projects-par">
+            <span>1<sup>st</sup> on Google search</span> using “ozone cleaning”,
+            “ozone sanitizing in dublin” keywords.
+          </p>
+          <p class="projects-par">Created with:</p>
+          <ul>
+            <li><img src="./images/nextjs.svg" alt="next js icon" /></li>
+            <li><img src="./images/icons8-html5.svg" alt="HTML5 icon" /></li>
+            <li><img src="./images/file-type-scss.svg" alt="SCSS icon" /></li>
+            <li>
+              <img src="./images/css3-original-wordmark.svg" alt="CSS3 icon" />
+            </li>
+
+            <li>
+              <img src="./images/javascript-js.svg" alt="JavaScript icon" />
+            </li>
+            <li>
+              <img src="./images/php.svg" alt="PHP icon" />
+            </li>
+          </ul>
+        </section>
+
+        <a class="github-icon social"
+          ><img src="./images/icons8-github.svg" alt="github icon"
+        /></a>
+        <a class="linkedin-icon social"
+          ><img src="./images/icons8-linkedin.svg" alt="linkedin icon"
+        /></a>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
