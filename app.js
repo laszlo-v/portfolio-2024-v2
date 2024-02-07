@@ -3,11 +3,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const aside = document.querySelector("aside");
   const logoMail = document.querySelector(".logo-mail");
   const main = document.querySelector("main");
+
+  // Ozone Master
+  const ozoneMasterURL = "https://ozonemaster.ie";
   const ozoneSwitch = document.querySelector(".ozone-switch");
   const ozoneSwitchSpan = document.querySelector(".ozone-switch span");
   const ozoneImage = document.querySelector(".ozone-image");
   const ozoneMonitor = document.querySelector(".ozone-monitor");
   const ozoneMonitorIframeContainer = document.querySelector(".ozone-iframe");
+
+  // Skorpiklima
+  const skorpioklimaURL = "https://skorpioklima.hu";
+  const skorpioklimaSwitchSpan = document.querySelector(
+    ".skorpioklima-switch span"
+  );
+  const skorpioklimaSwitch = document.querySelector(".skorpioklima-switch");
+  const skorpioklimaImage = document.querySelector(".skorpioklima-image");
+  const skorpioklimaMonitor = document.querySelector(".skorpioklima-monitor");
+  const skorpioklimaMonitorIframeContainer = document.querySelector(
+    ".skorpioklima-iframe"
+  );
 
   button
     ? button.addEventListener("click", () => {
@@ -22,9 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
     buttonSpan,
     image,
     monitor,
-    monitorIframeContainer
+    monitorIframeContainer,
+    url
   ) => {
     button.addEventListener("click", () => {
+      console.log("clicked");
       buttonSpan.textContent = buttonSpan.textContent === "OFF" ? "ON" : "OFF";
       if (buttonSpan.textContent === "ON") {
         buttonSpan.style.cssText = "color: #27ff82";
@@ -35,15 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
       monitor.classList.toggle("ozone-monitor-show");
 
       if (monitorIframeContainer.src === "") {
-        monitorIframeContainer.src = "https://ozonemaster.ie";
+        monitorIframeContainer.src = url;
       } else {
         monitorIframeContainer.src =
-          monitorIframeContainer.src === "https://ozonemaster.ie"
-            ? null
-            : "https://ozonemaster.ie";
+          monitorIframeContainer.src === url ? null : url;
       }
     });
   };
+
+  // Ozone Master
 
   ozoneSwitch
     ? interactiveMode(
@@ -51,7 +68,20 @@ document.addEventListener("DOMContentLoaded", () => {
         ozoneSwitchSpan,
         ozoneImage,
         ozoneMonitor,
-        ozoneMonitorIframeContainer
+        ozoneMonitorIframeContainer,
+        ozoneMasterURL
+      )
+    : "";
+
+  // Skorpioklima
+  skorpioklimaSwitch
+    ? interactiveMode(
+        skorpioklimaSwitch,
+        skorpioklimaSwitchSpan,
+        skorpioklimaImage,
+        skorpioklimaMonitor,
+        skorpioklimaMonitorIframeContainer,
+        skorpioklimaURL
       )
     : "";
 });

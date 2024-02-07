@@ -319,7 +319,67 @@ li img {
 }
 .projects-card li img {
   display: block;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
 }
+.projects-card li img:hover {
+  transform: scale(1.1) translateX(0.2rem);
+  -webkit-transform: scale(1.1) translateX(0.2rem);
+  -moz-transform: scale(1.1) translateX(0.2rem);
+  -ms-transform: scale(1.1) translateX(0.2rem);
+  -o-transform: scale(1.1) translateX(0.2rem);
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.visit-website {
+  display: block;
+  margin-top: 3rem;
+  color: #e8edeb;
+  border: 1px solid transparent;
+  border-image: linear-gradient(to bottom, #e8edeb 50%, #27ff82 50%);
+  border-bottom: 5px solid #27ff82;
+  border-image-slice: 1;
+  width: max-content;
+  padding: 0.5rem 0.8rem;
+  position: relative;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.visit-website:hover {
+  letter-spacing: 0.1rem;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+.visit-website:active {
+  transform: translateY(0.2rem);
+  -webkit-transform: translateY(0.2rem);
+  -moz-transform: translateY(0.2rem);
+  -ms-transform: translateY(0.2rem);
+  -o-transform: translateY(0.2rem);
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
 /*********************** monitor in monitor effect ***************/
 
 .project-name-button {
@@ -339,20 +399,39 @@ li img {
   border-image-slice: 1;
   letter-spacing: 0.1rem;
   cursor: pointer;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
 }
-
+.switch:active {
+  transform: translateY(0.2rem);
+  -webkit-transform: translateY(0.2rem);
+  -moz-transform: translateY(0.2rem);
+  -ms-transform: translateY(0.2rem);
+  -o-transform: translateY(0.2rem);
+  transition: all 0.2;
+  -webkit-transition: all 0.2;
+  -moz-transition: all 0.2;
+  -ms-transition: all 0.2;
+  -o-transition: all 0.2;
+}
 .switch span {
   color: #22ddff;
   font-weight: bold;
   margin-left: 0.5rem;
 }
-.ozone-image {
+.ozone-image,
+.skorpioklima-image {
   display: block;
 }
-.ozone-hide {
+.ozone-hide,
+.skorpioklima-hide {
   display: none;
 }
-.ozone-monitor {
+.ozone-monitor,
+.skorpioklima-monitor {
   display: none;
   position: relative;
   width: 100%;
@@ -360,7 +439,8 @@ li img {
   overflow: hidden;
   background: white;
 }
-.ozone-monitor-show {
+.ozone-monitor-show,
+.skorpioklima-monitor-show {
   display: block;
 }
 .iframe-container {
