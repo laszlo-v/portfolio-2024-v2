@@ -164,6 +164,7 @@ li img {
 .social {
   width: 2rem;
   height: 2rem;
+  z-index: 4;
 }
 .social:hover {
   cursor: pointer;
