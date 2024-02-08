@@ -33,6 +33,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const dentistMonitorIframeContainer =
     document.querySelector(".dentist-iframe");
 
+  // Gym
+  const gymURL = "https://lvpfgym.tech/";
+  const gymSwitchSpan = document.querySelector(".gym-switch span");
+  const gymSwitch = document.querySelector(".gym-switch");
+  const gymImage = document.querySelector(".gym-image");
+  const gymMonitor = document.querySelector(".gym-monitor");
+  const gymMonitorIframeContainer = document.querySelector(".gym-iframe");
+
   button
     ? button.addEventListener("click", () => {
         aside.classList.toggle("toggle");
@@ -103,6 +111,18 @@ document.addEventListener("DOMContentLoaded", () => {
         dentistMonitor,
         dentistMonitorIframeContainer,
         dentistURL
+      )
+    : "";
+
+  // Gym
+  gymSwitch
+    ? interactiveMode(
+        gymSwitch,
+        gymSwitchSpan,
+        gymImage,
+        gymMonitor,
+        gymMonitorIframeContainer,
+        gymURL
       )
     : "";
 });

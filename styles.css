@@ -424,17 +424,20 @@ li img {
 }
 .ozone-image,
 .skorpioklima-image,
-.dentist-image {
+.dentist-image,
+.gym-image {
   display: block;
 }
 .ozone-hide,
 .skorpioklima-hide,
-.dentist-hide {
+.dentist-hide,
+.gym-hide {
   display: none;
 }
 .ozone-monitor,
 .skorpioklima-monitor,
-.dentist-monitor {
+.dentist-monitor,
+.gym-monitor {
   display: none;
   position: relative;
   width: 100%;
@@ -444,7 +447,8 @@ li img {
 }
 .ozone-monitor-show,
 .skorpioklima-monitor-show,
-.dentist-monitor-show {
+.dentist-monitor-show,
+.gym-monitor-show {
   display: block;
 }
 .iframe-container {
