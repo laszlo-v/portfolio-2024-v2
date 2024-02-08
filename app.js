@@ -41,6 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const gymMonitor = document.querySelector(".gym-monitor");
   const gymMonitorIframeContainer = document.querySelector(".gym-iframe");
 
+  // APIs
+  const apisURL = "https://lvpfapi.tech/";
+  const apisSwitchSpan = document.querySelector(".apis-switch span");
+  const apisSwitch = document.querySelector(".apis-switch");
+  const apisImage = document.querySelector(".apis-image");
+  const apisMonitor = document.querySelector(".apis-monitor");
+  const apisMonitorIframeContainer = document.querySelector(".apis-iframe");
   button
     ? button.addEventListener("click", () => {
         aside.classList.toggle("toggle");
@@ -123,6 +130,18 @@ document.addEventListener("DOMContentLoaded", () => {
         gymMonitor,
         gymMonitorIframeContainer,
         gymURL
+      )
+    : "";
+
+  // APIs
+  apisSwitch
+    ? interactiveMode(
+        apisSwitch,
+        apisSwitchSpan,
+        apisImage,
+        apisMonitor,
+        apisMonitorIframeContainer,
+        apisURL
       )
     : "";
 });
