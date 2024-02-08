@@ -385,7 +385,7 @@ li img {
 .project-name-button {
   display: flex;
   align-items: baseline;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 .switch {
   display: none;
@@ -423,15 +423,18 @@ li img {
   margin-left: 0.5rem;
 }
 .ozone-image,
-.skorpioklima-image {
+.skorpioklima-image,
+.dentist-image {
   display: block;
 }
 .ozone-hide,
-.skorpioklima-hide {
+.skorpioklima-hide,
+.dentist-hide {
   display: none;
 }
 .ozone-monitor,
-.skorpioklima-monitor {
+.skorpioklima-monitor,
+.dentist-monitor {
   display: none;
   position: relative;
   width: 100%;
@@ -440,7 +443,8 @@ li img {
   background: white;
 }
 .ozone-monitor-show,
-.skorpioklima-monitor-show {
+.skorpioklima-monitor-show,
+.dentist-monitor-show {
   display: block;
 }
 .iframe-container {

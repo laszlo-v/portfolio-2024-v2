@@ -24,6 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
     ".skorpioklima-iframe"
   );
 
+  // Dentist
+  const dentistURL = "https://lvpfdentist.website/";
+  const dentistSwitchSpan = document.querySelector(".skorpioklima-switch span");
+  const dentistSwitch = document.querySelector(".dentist-switch");
+  const dentistImage = document.querySelector(".dentist-image");
+  const dentistMonitor = document.querySelector(".dentist-monitor");
+  const dentistMonitorIframeContainer =
+    document.querySelector(".dentist-iframe");
+
   button
     ? button.addEventListener("click", () => {
         aside.classList.toggle("toggle");
@@ -82,6 +91,18 @@ document.addEventListener("DOMContentLoaded", () => {
         skorpioklimaMonitor,
         skorpioklimaMonitorIframeContainer,
         skorpioklimaURL
+      )
+    : "";
+
+  // Dentist
+  dentistSwitch
+    ? interactiveMode(
+        dentistSwitch,
+        dentistSwitchSpan,
+        dentistImage,
+        dentistMonitor,
+        dentistMonitorIframeContainer,
+        dentistURL
       )
     : "";
 });
