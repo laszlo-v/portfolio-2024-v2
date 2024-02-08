@@ -480,6 +480,72 @@ li img {
 }
 
 /**************************** monitor effect ends here *****************/
+
+/******************************* Contact ******************************/
+.contact-form {
+  max-width: 85%;
+  margin: 0 auto;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 5rem;
+}
+.form-field:nth-child(2) {
+  margin: 4rem 0;
+}
+.form-label,
+input {
+  width: 80vw;
+  max-width: 25rem;
+}
+.form-label:hover,
+input:hover {
+  cursor: pointer;
+}
+.form-label {
+  position: absolute;
+  letter-spacing: 0.15rem;
+  bottom: 0.75rem;
+  color: #e8edeb;
+  padding-left: 1rem;
+  font-size: clamp(0.9rem, 1.2vw + 0.1rem, 1.3rem);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+input {
+  font-size: clamp(1rem, 2vw + 0.1rem, 1.8rem);
+  height: 3rem;
+  margin-top: auto;
+  padding-left: 0.5rem;
+  letter-spacing: 0.2rem;
+  color: #e8edeb;
+  outline: none;
+  border: none;
+  background-color: #112733;
+  border-left: 1px solid #22ddff;
+  border-right: 1px solid #22ddff;
+  border-bottom: 2px solid #22ddff;
+}
+
+.form-label.active {
+  bottom: 3.5rem;
+  font-size: 90%;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transform: translateX(-0.5rem);
+  -webkit-transform: translateX(-0.5rem);
+  -moz-transform: translateX(-0.5rem);
+  -ms-transform: translateX(-0.5rem);
+  -o-transform: translateX(-0.5rem);
+}
 /******************************* Media queries *********************************/
 @media (min-width: 60rem) {
   .menu-handler {
@@ -546,6 +612,7 @@ li img {
   .education-card,
   .skills-card,
   .projects-card,
+  .contact-form,
   p {
     max-width: 70vw;
   }

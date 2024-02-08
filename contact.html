@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laszlo Varga | Home</title>
+    <title>Laszlo Varga | Contact</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,7 +41,7 @@
         <nav>
           <ul>
             <li>
-              <a href="./" class="active"
+              <a href="./index.html"
                 ><img src="./images/home.svg" alt="home icon" />Home</a
               >
             </li>
@@ -59,7 +59,7 @@
               >
             </li>
             <li>
-              <a href="./contact.html"
+              <a href="./" class="active"
                 ><img src="./images/mail.svg" alt="envelope icon" />Contact</a
               >
             </li>
@@ -67,14 +67,19 @@
         </nav>
       </aside>
       <div class="container">
-        <p class="intro-par">
-          Welcome to my world of web development, where each line of code weaves
-          captivating digital experiences.
-        </p>
-        <p class="intro-par">
-          Explore my journey and projects, as I strive for continuous growth in
-          this ever-evolving tech realm.
-        </p>
+        <p class="intro-par">Get in Touch</p>
+
+        <form class="contact-form">
+          <div class="form-field">
+            <input type="text" id="name" name="name" class="input" />
+            <label for="name" class="form-label">Name:</label>
+          </div>
+          <div class="form-field">
+            <input type="email" id="email" name="email" class="input" />
+            <label for="email" class="form-label">Email:</label>
+          </div>
+        </form>
+
         <a class="github-icon social"
           ><img src="./images/icons8-github.svg" alt="github icon"
         /></a>
