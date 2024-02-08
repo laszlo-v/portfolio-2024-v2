@@ -48,6 +48,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const apisImage = document.querySelector(".apis-image");
   const apisMonitor = document.querySelector(".apis-monitor");
   const apisMonitorIframeContainer = document.querySelector(".apis-iframe");
+
+  // Form
+  const formURL = "https://lvpftimedform.tech/";
+  const formSwitchSpan = document.querySelector(".form-switch span");
+  const formSwitch = document.querySelector(".form-switch");
+  const formImage = document.querySelector(".form-image");
+  const formMonitor = document.querySelector(".form-monitor");
+  const formMonitorIframeContainer = document.querySelector(".form-iframe");
+
+  // Find numbers
+  const numbersURL = "https://lvpffindnumbers.tech/";
+  const numbersSwitchSpan = document.querySelector(".numbers-switch span");
+  const numbersSwitch = document.querySelector(".numbers-switch");
+  const numbersImage = document.querySelector(".numbers-image");
+  const numbersMonitor = document.querySelector(".numbers-monitor");
+  const numbersMonitorIframeContainer =
+    document.querySelector(".numbers-iframe");
+
   button
     ? button.addEventListener("click", () => {
         aside.classList.toggle("toggle");
@@ -142,6 +160,30 @@ document.addEventListener("DOMContentLoaded", () => {
         apisMonitor,
         apisMonitorIframeContainer,
         apisURL
+      )
+    : "";
+
+  // Form
+  formSwitch
+    ? interactiveMode(
+        formSwitch,
+        formSwitchSpan,
+        formImage,
+        formMonitor,
+        formMonitorIframeContainer,
+        formURL
+      )
+    : "";
+
+  // Find numbers
+  numbersSwitch
+    ? interactiveMode(
+        numbersSwitch,
+        numbersSwitchSpan,
+        numbersImage,
+        numbersMonitor,
+        numbersMonitorIframeContainer,
+        numbersURL
       )
     : "";
 });

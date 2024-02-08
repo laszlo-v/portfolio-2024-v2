@@ -79,6 +79,9 @@ body {
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
 }
+.menu-handler {
+  display: none;
+}
 .logo-mail.toggle {
   height: 4rem;
   transition: all 0.5s;
@@ -426,21 +429,27 @@ li img {
 .skorpioklima-image,
 .dentist-image,
 .gym-image,
-.apis-image {
+.apis-image,
+.form-image,
+.numbers-image {
   display: block;
 }
 .ozone-hide,
 .skorpioklima-hide,
 .dentist-hide,
 .gym-hide,
-.apis-hide {
+.apis-hide,
+.form-hide,
+.numbers-hide {
   display: none;
 }
 .ozone-monitor,
 .skorpioklima-monitor,
 .dentist-monitor,
 .gym-monitor,
-.apis-monitor {
+.apis-monitor,
+.form-monitor,
+.numbers-monitor {
   display: none;
   position: relative;
   width: 100%;
@@ -452,7 +461,9 @@ li img {
 .skorpioklima-monitor-show,
 .dentist-monitor-show,
 .gym-monitor-show,
-.apis-monitor-show {
+.apis-monitor-show,
+.form-monitor-show,
+.numbers-monitor-show {
   display: block;
 }
 .iframe-container {
@@ -471,6 +482,9 @@ li img {
 /**************************** monitor effect ends here *****************/
 /******************************* Media queries *********************************/
 @media (min-width: 60rem) {
+  .menu-handler {
+    display: block;
+  }
   main {
     display: flex;
   }
