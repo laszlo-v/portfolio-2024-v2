@@ -68,14 +68,29 @@
       </aside>
       <div class="container">
         <p class="intro-par get-in-touch">Get in Touch</p>
-        <form class="contact-form">
+
+        <form action="./send-mail.php" method="post" class="contact-form">
           <div class="form-top-container">
             <div class="form-field">
-              <input type="text" id="name" name="name" class="input" />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="input"
+                required
+                aria-required="true"
+              />
               <label for="name" class="form-label">Name:</label>
             </div>
             <div class="form-field">
-              <input type="email" id="email" name="email" class="input" />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="input"
+                required
+                aria-required="true"
+              />
               <label for="email" class="form-label">Email:</label>
             </div>
           </div>
@@ -86,6 +101,8 @@
                 name="message"
                 class="input"
                 rows="8"
+                required
+                aria-required="true"
               ></textarea>
               <label for="message" class="form-label">Message:</label>
             </div>

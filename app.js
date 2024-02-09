@@ -200,4 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Form validation
 });
