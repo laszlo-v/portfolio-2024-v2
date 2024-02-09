@@ -72,7 +72,7 @@ body {
   border-bottom: 1px solid grey;
   color: white;
   background-color: #001e2b;
-  z-index: 3;
+  z-index: 5;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -142,7 +142,6 @@ li img {
   display: none;
 }
 .container {
-  min-height: 100vh;
   padding-bottom: 5rem;
   width: 100%;
   background-color: #112733;
@@ -601,6 +600,8 @@ input[type="submit"] {
   border: 1px solid #22ddff;
   margin-top: 5rem;
   padding: 0.5rem 0;
+  height: 4rem;
+
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -636,6 +637,7 @@ input[type="submit"]:active {
   main {
     display: flex;
   }
+
   li {
     width: max-content;
   }
@@ -651,6 +653,8 @@ input[type="submit"]:active {
   }
   aside {
     width: 15rem;
+    height: 100vh;
+    background-color: #001e2b;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -666,12 +670,14 @@ input[type="submit"]:active {
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
   }
+
   aside nav ul {
     flex-direction: column;
     justify-content: unset;
-    background-color: #001e2b;
-    height: 100vh;
-    padding: 5rem 0 0 2rem;
+    padding: 0 0 0 2rem;
+    margin-top: 5rem;
+    position: sticky;
+    top: 10rem;
   }
   nav ul li {
     margin-bottom: 2rem;
