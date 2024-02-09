@@ -79,6 +79,7 @@
                 class="input"
                 required
                 aria-required="true"
+                aria-label="Your Name"
               />
               <label for="name" class="form-label">Name:</label>
             </div>
@@ -90,6 +91,7 @@
                 class="input"
                 required
                 aria-required="true"
+                aria-label="Your Email"
               />
               <label for="email" class="form-label">Email:</label>
             </div>
@@ -103,11 +105,18 @@
                 rows="8"
                 required
                 aria-required="true"
+                aria-label="Your Message"
               ></textarea>
               <label for="message" class="form-label">Message:</label>
             </div>
             <div class="form-field">
-              <input type="submit" name="submit" class="submit" value="Send" />
+              <input
+                type="submit"
+                name="submit"
+                class="submit"
+                value="Send"
+                aria-label="Send Message"
+              />
             </div>
           </div>
         </form>
