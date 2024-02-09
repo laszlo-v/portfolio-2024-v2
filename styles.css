@@ -630,6 +630,9 @@ input[type="submit"]:active {
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
 }
+input[type="email"] {
+  background-color: inherit;
+}
 /******************************* Media queries *********************************/
 @media (min-width: 60rem) {
   .menu-handler {
