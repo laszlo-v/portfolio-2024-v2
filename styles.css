@@ -695,7 +695,7 @@ input[type="email"] {
     height: 2.5rem;
   }
   aside {
-    width: 13rem;
+    width: 11rem;
     height: 100vh;
     background-color: #001e2b;
     transition: all 0.5s;
@@ -705,7 +705,7 @@ input[type="email"] {
     -o-transition: all 0.5s;
   }
   aside.toggle {
-    margin-left: -13rem;
+    margin-left: -11rem;
     top: 4rem;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -728,7 +728,7 @@ input[type="email"] {
   }
   @media (hover: hover) {
     nav ul li a:not(.active):hover {
-      margin-left: 2rem;
+      margin-left: 1.5rem;
       transition: all 0.5s;
       -webkit-transition: all 0.5s;
       -moz-transition: all 0.5s;
