@@ -553,7 +553,7 @@ textarea {
   -o-transition: all 0.5s;
 }
 .form-label.active {
-  bottom: 3.5rem;
+  bottom: 5rem;
   font-size: 90%;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -574,9 +574,8 @@ textarea {
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
 }
-
-.form-field:nth-child(3) .form-label.active {
-  margin-bottom: 5.5rem;
+textarea ~ .form-label.active {
+  bottom: 6.5rem;
 }
 textarea {
   resize: none;
@@ -587,6 +586,7 @@ textarea {
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
 }
+
 textarea:focus {
   max-width: 30rem;
   min-height: 10rem;
