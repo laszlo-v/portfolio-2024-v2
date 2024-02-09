@@ -8,7 +8,7 @@
 
 a {
   text-decoration: none;
-  font-size: clamp(0.9rem, 2vw + 0.2rem, 1.5rem);
+  font-size: clamp(0.9rem, 1vw + 0.1rem, 1.5rem);
   color: #22ddff;
 }
 a.active {
@@ -695,7 +695,7 @@ input[type="email"] {
     height: 2.5rem;
   }
   aside {
-    width: 15rem;
+    width: 13rem;
     height: 100vh;
     background-color: #001e2b;
     transition: all 0.5s;
@@ -705,7 +705,7 @@ input[type="email"] {
     -o-transition: all 0.5s;
   }
   aside.toggle {
-    margin-left: -15rem;
+    margin-left: -13rem;
     top: 4rem;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -720,7 +720,7 @@ input[type="email"] {
   aside nav ul {
     flex-direction: column;
     justify-content: unset;
-    padding: 0 0 0 2rem;
+    padding: 0 0 0 1rem;
     margin-top: 5rem;
   }
   nav ul li {
