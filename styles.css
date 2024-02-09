@@ -675,7 +675,7 @@ input[type="email"] {
 
 .under-dev {
   position: absolute;
-  bottom: 0;
+  top: 6rem;
   left: 50%;
   color: orangered;
   font-size: 1rem;
