@@ -500,7 +500,7 @@ li img {
 input,
 textarea {
   width: 80vw;
-  max-width: 25rem;
+  max-width: 22rem;
 }
 .form-label:hover,
 input:hover,
