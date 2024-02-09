@@ -143,6 +143,7 @@ li img {
 }
 .container {
   padding-bottom: 5rem;
+  min-height: calc(100vh - 5rem);
   width: 100%;
   background-color: #112733;
 }
@@ -670,14 +671,15 @@ input[type="submit"]:active {
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
   }
-
+  aside nav {
+    position: sticky;
+    top: 10rem;
+  }
   aside nav ul {
     flex-direction: column;
     justify-content: unset;
     padding: 0 0 0 2rem;
     margin-top: 5rem;
-    position: sticky;
-    top: 10rem;
   }
   nav ul li {
     margin-bottom: 2rem;
