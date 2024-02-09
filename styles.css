@@ -44,7 +44,7 @@ h4 {
   color: #27ff82;
 }
 p {
-  font-size: clamp(0.8rem, 1.2vw + 0.2rem, 1.4rem);
+  font-size: clamp(1rem, 1.2vw + 0.2rem, 1.4rem);
   line-height: 150%;
   max-width: 85vw;
 }
