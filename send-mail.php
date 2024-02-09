@@ -15,6 +15,7 @@
 
 <!DOCTYPE HTML>
 <html lang="en-US">
-<head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
-
+<head>
+	<script>alert("E-mail has been sent.");</script>
+	<meta HTTP-EQUIV="REFRESH" content="0; url=./index.html"> 
 </head>
