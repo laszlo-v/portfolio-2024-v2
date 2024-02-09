@@ -482,10 +482,12 @@ li img {
 /**************************** monitor effect ends here *****************/
 
 /******************************* Contact ******************************/
+
 .contact-form {
   max-width: 85%;
   margin: 0 auto;
 }
+
 .form-field {
   display: flex;
   flex-direction: column;
@@ -496,12 +498,14 @@ li img {
   margin: 4rem 0;
 }
 .form-label,
-input {
+input,
+textarea {
   width: 80vw;
   max-width: 25rem;
 }
 .form-label:hover,
-input:hover {
+input:hover,
+textarea:hover {
   cursor: pointer;
 }
 .form-label {
@@ -531,7 +535,24 @@ input {
   border-right: 1px solid #22ddff;
   border-bottom: 2px solid #22ddff;
 }
-
+textarea {
+  font-size: clamp(1rem, 2vw + 0.1rem, 1.8rem);
+  margin-top: auto;
+  padding-left: 0.5rem;
+  letter-spacing: 0.2rem;
+  color: #e8edeb;
+  outline: none;
+  border: none;
+  background-color: #112733;
+  border-left: 1px solid #22ddff;
+  border-right: 1px solid #22ddff;
+  border-bottom: 2px solid #22ddff;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
 .form-label.active {
   bottom: 3.5rem;
   font-size: 90%;
@@ -545,6 +566,67 @@ input {
   -moz-transform: translateX(-0.5rem);
   -ms-transform: translateX(-0.5rem);
   -o-transform: translateX(-0.5rem);
+}
+.form-field:nth-child(3) {
+  min-height: 8rem;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+.form-field:nth-child(3) .form-label.active {
+  margin-bottom: 5.5rem;
+}
+textarea {
+  resize: none;
+  min-height: 100%;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+textarea:focus {
+  max-width: 30rem;
+  min-height: 10rem;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+input[type="submit"] {
+  border: 1px solid #22ddff;
+  margin-top: 5rem;
+  padding: 0.5rem 0;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+input[type="submit"]:hover {
+  letter-spacing: 0.6rem;
+  background-color: #001e2b;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+input[type="submit"]:active {
+  transform: translateY(0.5rem);
+  -webkit-transform: translateY(0.5rem);
+  -moz-transform: translateY(0.5rem);
+  -ms-transform: translateY(0.5rem);
+  -o-transform: translateY(0.5rem);
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
 }
 /******************************* Media queries *********************************/
 @media (min-width: 60rem) {
@@ -620,5 +702,22 @@ input {
 @media (min-width: 75rem) {
   .switch {
     display: block;
+  }
+
+  /************* Contact **************/
+
+  .get-in-touch {
+    position: sticky;
+    top: 3rem;
+  }
+  .form-top-container,
+  .form-bottom-container {
+    max-width: 60rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  input[type="submit"] {
+    margin-top: auto;
   }
 }

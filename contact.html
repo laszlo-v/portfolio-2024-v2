@@ -67,23 +67,44 @@
         </nav>
       </aside>
       <div class="container">
-        <p class="intro-par">Get in Touch</p>
-
+        <p class="intro-par get-in-touch">Get in Touch</p>
         <form class="contact-form">
-          <div class="form-field">
-            <input type="text" id="name" name="name" class="input" />
-            <label for="name" class="form-label">Name:</label>
+          <div class="form-top-container">
+            <div class="form-field">
+              <input type="text" id="name" name="name" class="input" />
+              <label for="name" class="form-label">Name:</label>
+            </div>
+            <div class="form-field">
+              <input type="email" id="email" name="email" class="input" />
+              <label for="email" class="form-label">Email:</label>
+            </div>
           </div>
-          <div class="form-field">
-            <input type="email" id="email" name="email" class="input" />
-            <label for="email" class="form-label">Email:</label>
+          <div class="form-bottom-container">
+            <div class="form-field">
+              <textarea
+                id="message"
+                name="message"
+                class="input"
+                rows="8"
+              ></textarea>
+              <label for="message" class="form-label">Message:</label>
+            </div>
+            <div class="form-field">
+              <input type="submit" name="submit" class="submit" />
+            </div>
           </div>
         </form>
 
-        <a class="github-icon social"
+        <a
+          href="https://github.com/laszlo-v"
+          target="_blank"
+          class="github-icon social"
           ><img src="./images/icons8-github.svg" alt="github icon"
         /></a>
-        <a class="linkedin-icon social"
+        <a
+          href="https://www.linkedin.com/in/laszlo-varga-b04862150/"
+          target="_blank"
+          class="linkedin-icon social"
           ><img src="./images/icons8-linkedin.svg" alt="linkedin icon"
         /></a>
       </div>
