@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
       emailLabel.classList.add("active");
       nameLabel.textContent = "Name is required!";
       messageLabel.textContent = "Message is required!";
-      messageLabel.textContent = "Email is required!";
+      emailLabel.textContent = "Email is required!";
       isNameValid = false;
       isMessageValid = false;
       isEmailValid = false;
