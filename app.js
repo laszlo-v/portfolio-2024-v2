@@ -229,30 +229,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const messageLabel = document.querySelector(".message-label");
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
   let isNameValid = true;
+  let isMessageValid = true;
   let hasNameInteracted = false;
+  let hasMessageInteracted = false;
 
   const formValidation = () => {
-    if (name.value.trim() === "") {
-      name.classList.add("name-alert");
+    if (name.value.trim() === "" || message.value.trim() === "") {
+      name.classList.add("alert");
+      message.classList.add("alert");
       nameLabel.classList.add("active");
+      messageLabel.classList.add("active");
       nameLabel.textContent = "Name is required!";
+      messageLabel.textContent = "Message is required!";
       isNameValid = false;
+      isMessageValid = false;
     } else {
-      name.classList.remove("name-alert");
+      name.classList.remove("alert");
+      message.classList.remove("alert");
       nameLabel.textContent = "Name";
+      messageLabel.textContent = "Message";
     }
-    return isNameValid;
   };
 
+  // Name input checking
   name
     ? name.addEventListener("input", () => {
         if (name.value.trim()) {
-          name.classList.remove("name-alert");
+          name.classList.remove("alert");
           nameLabel.textContent = "Name";
         } else if (name.value.trim().length < 1) {
-          name.classList.add("name-alert");
+          name.classList.add("alert");
           nameLabel.textContent = "Name is required!";
           nameLabel.classList.add("active");
         }
@@ -260,20 +267,51 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     : "";
 
-  name
-    ? name.addEventListener("blur", () => {
-        if (!hasNameInteracted && name.value.trim() === "") {
-          name.classList.add("name-alert");
-          nameLabel.classList.add("active");
-          nameLabel.textContent = "Name is required!";
-        } else if (name.value.trim().length < 1) {
-          name.classList.add("name-alert");
-          nameLabel.textContent = "Name is required!";
-          nameLabel.classList.add("active");
+  // Message input checking
+  message
+    ? message.addEventListener("input", () => {
+        if (message.value.trim()) {
+          message.classList.remove("alert");
+          messageLabel.textContent = "Message";
+        } else if (message.value.trim().length < 1) {
+          message.classList.add("alert");
+          messageLabel.textContent = "Message is required!";
+          messageLabel.classList.add("active");
         }
+        hasMessageInteracted = true;
       })
     : "";
 
+  // Name blur checking
+  name
+    ? name.addEventListener("blur", () => {
+        if (!hasNameInteracted && name.value.trim() === "") {
+          name.classList.add("alert");
+          nameLabel.classList.add("active");
+          nameLabel.textContent = "Name is required!";
+        } else if (name.value.trim().length < 1) {
+          name.classList.add("alert");
+          nameLabel.textContent = "Name is required!";
+          nameLabel.classList.add("active");
+        }
+        hasMessageInteracted = true;
+      })
+    : "";
+
+  // Message blur checking
+  message
+    ? message.addEventListener("blur", () => {
+        if (!hasNameInteracted && message.value.trim() === "") {
+          message.classList.add("alert");
+          messageLabel.classList.add("active");
+          messageLabel.textContent = "Message is required!";
+        } else if (message.value.trim().length < 1) {
+          message.classList.add("alert");
+          messageLabel.textContent = "Message is required!";
+          messageLabel.classList.add("active");
+        }
+      })
+    : "";
   form
     ? form.addEventListener("submit", (e) => {
         if (!formValidation()) {

@@ -700,7 +700,7 @@ input[type="email"] {
   -o-transform: translateX(-50%);
 }
 
-.name-alert {
+.alert {
   border: 1px solid red;
 }
 /******************************* Media queries *********************************/
