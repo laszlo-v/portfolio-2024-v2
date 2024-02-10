@@ -300,6 +300,7 @@ li img {
   opacity: 1;
 }
 /******************************* Projects ***************************************/
+
 .projects-card {
   display: flex;
   flex-direction: column;
@@ -322,6 +323,7 @@ li img {
   padding: 1rem;
   color: #22ddff;
   width: max-content;
+  background: linear-gradient(to right, #112733, #001e2b);
   border-top: 5px solid #22ddff;
   border-bottom: 5px solid #e8edeb;
   border-radius: 1rem;
@@ -329,6 +331,9 @@ li img {
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
+}
+.project-name-button button {
+  background: linear-gradient(to right, #112733, #001e2b);
 }
 .objectives {
   margin: 3rem 0 2rem;
