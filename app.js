@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (name.value.trim()) {
           name.classList.remove("name-alert");
           nameLabel.textContent = "Name";
-        } else if (name.value.length < 1) {
+        } else if (name.value.trim().length < 1) {
           name.classList.add("name-alert");
           nameLabel.textContent = "Name is required!";
           nameLabel.classList.add("active");
@@ -262,11 +262,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   name
     ? name.addEventListener("blur", () => {
-        if (!hasNameInteracted && name.value === "") {
+        if (!hasNameInteracted && name.value.trim() === "") {
           name.classList.add("name-alert");
           nameLabel.classList.add("active");
           nameLabel.textContent = "Name is required!";
-        } else if (name.value.length < 1) {
+        } else if (name.value.trim().length < 1) {
           name.classList.add("name-alert");
           nameLabel.textContent = "Name is required!";
           nameLabel.classList.add("active");
