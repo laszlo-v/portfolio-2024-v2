@@ -580,7 +580,12 @@ input {
   border-right: 1px solid #22ddff;
   border-bottom: 2px solid #22ddff;
 }
-
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #e8edeb;
+  -webkit-box-shadow: 0 0 0px 40rem #112733 inset;
+}
 textarea {
   font-size: clamp(1rem, 2vw + 0.1rem, 1.8rem);
   margin-top: auto;
@@ -648,7 +653,7 @@ input[type="submit"] {
   margin-top: 5rem;
   padding: 0.5rem 0;
   height: 4rem;
-
+  background-color: inherit;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
