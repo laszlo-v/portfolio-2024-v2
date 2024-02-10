@@ -580,6 +580,9 @@ input {
   border-right: 1px solid #22ddff;
   border-bottom: 2px solid #22ddff;
 }
+input:valid:-webkit-autofill {
+  background-color: #112733;
+}
 textarea {
   font-size: clamp(1rem, 2vw + 0.1rem, 1.8rem);
   margin-top: auto;
@@ -674,9 +677,6 @@ input[type="submit"]:active {
   -moz-transition: all 0.2s;
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
-}
-input[type="email"] {
-  background-color: inherit;
 }
 
 .alert {
@@ -780,4 +780,15 @@ input[type="email"] {
   input[type="submit"] {
     margin-top: auto;
   }
+}
+input[type="email"],
+input[type="email"]:-webkit-autofill {
+  background-color: #112733 !important;
+}
+input[type="email"]:valid,
+input[type="email"]:-webkit-autofill {
+  background-color: #112733 !important;
+}
+input#email:valid:-webkit-autofill {
+  background-color: #112733 !important;
 }
