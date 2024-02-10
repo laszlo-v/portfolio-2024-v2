@@ -223,12 +223,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const name = document.getElementById("name");
   const email = document.getElementById("email");
   const message = document.getElementById("message");
-  const submitButton = document.querySelector(".submit");
   const nameLabel = document.querySelector(".name-label");
   const emailLabel = document.querySelector(".email-label");
   const messageLabel = document.querySelector(".message-label");
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //************************************************************* */
   let isNameValid = true;
   let isEmailValid = true;
   let isMessageValid = true;
@@ -262,6 +261,8 @@ document.addEventListener("DOMContentLoaded", () => {
       messageLabel.textContent = "Message:";
       messageLabel.textContent = "Email:";
     }
+
+    return isNameValid && isEmailValid && isEmailValid;
   };
 
   // Name input checking
