@@ -187,19 +187,36 @@ document.addEventListener("DOMContentLoaded", () => {
       )
     : "";
 
+  // Scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  window.addEventListener("scroll", () => {
+    const backToTopButton = document.querySelector(".back-to-top");
+    if (window.scrollY > 200) {
+      backToTopButton.style.display = "block";
+      backToTopButton.addEventListener("click", scrollToTop);
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+
   // Contact form
   const inputs = document.querySelectorAll(".input");
-  inputs.forEach((input) => {
-    input.addEventListener("focus", () => {
-      input.nextElementSibling.classList.add("active");
-    });
 
-    input.addEventListener("blur", () => {
-      if (input.value === "") {
-        input.nextElementSibling.classList.remove("active");
-      }
-    });
-  });
+  inputs
+    ? inputs.forEach((input) => {
+        input.addEventListener("focus", () => {
+          input.nextElementSibling.classList.add("active");
+        });
+
+        input.addEventListener("blur", () => {
+          if (input.value === "") {
+            input.nextElementSibling.classList.remove("active");
+          }
+        });
+      })
+    : "";
 
   // Form validation
   const form = document.querySelector(".contact-form");
@@ -229,47 +246,39 @@ document.addEventListener("DOMContentLoaded", () => {
     return isNameValid;
   };
 
-  name.addEventListener("input", () => {
-    if (name.value.trim()) {
-      name.classList.remove("name-alert");
-      nameLabel.textContent = "Name";
-    } else if (name.value.length < 1) {
-      name.classList.add("name-alert");
-      nameLabel.textContent = "Name is required!";
-      nameLabel.classList.add("active");
-    }
-    hasNameInteracted = true;
-  });
+  name
+    ? name.addEventListener("input", () => {
+        if (name.value.trim()) {
+          name.classList.remove("name-alert");
+          nameLabel.textContent = "Name";
+        } else if (name.value.length < 1) {
+          name.classList.add("name-alert");
+          nameLabel.textContent = "Name is required!";
+          nameLabel.classList.add("active");
+        }
+        hasNameInteracted = true;
+      })
+    : "";
 
-  name.addEventListener("blur", () => {
-    if (!hasNameInteracted && name.value === "") {
-      name.classList.add("name-alert");
-      nameLabel.classList.add("active");
-      nameLabel.textContent = "Name is required!";
-    } else if (name.value.length < 1) {
-      name.classList.add("name-alert");
-      nameLabel.textContent = "Name is required!";
-      nameLabel.classList.add("active");
-    }
-  });
+  name
+    ? name.addEventListener("blur", () => {
+        if (!hasNameInteracted && name.value === "") {
+          name.classList.add("name-alert");
+          nameLabel.classList.add("active");
+          nameLabel.textContent = "Name is required!";
+        } else if (name.value.length < 1) {
+          name.classList.add("name-alert");
+          nameLabel.textContent = "Name is required!";
+          nameLabel.classList.add("active");
+        }
+      })
+    : "";
 
-  form.addEventListener("submit", (e) => {
-    if (!formValidation()) {
-      e.preventDefault();
-    }
-  });
-  // Scroll to top
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-  window.addEventListener("scroll", () => {
-    const backToTopButton = document.querySelector(".back-to-top");
-    if (window.scrollY > 200) {
-      backToTopButton.style.display = "block";
-      backToTopButton.addEventListener("click", scrollToTop);
-    } else {
-      backToTopButton.style.display = "none";
-    }
-  });
+  form
+    ? form.addEventListener("submit", (e) => {
+        if (!formValidation()) {
+          e.preventDefault();
+        }
+      })
+    : "";
 });
