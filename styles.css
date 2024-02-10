@@ -679,27 +679,6 @@ input[type="email"] {
   background-color: inherit;
 }
 
-.under-dev {
-  position: absolute;
-  top: 11rem;
-  left: 50%;
-  color: orangered;
-  font-size: 1rem;
-  border: 1px solid orangered;
-  padding: 0.2rem 0.5rem;
-  width: max-content;
-  border-radius: 0.2rem;
-  -webkit-border-radius: 0.2rem;
-  -moz-border-radius: 0.2rem;
-  -ms-border-radius: 0.2rem;
-  -o-border-radius: 0.2rem;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-}
-
 .alert {
   border: 1px solid red;
 }

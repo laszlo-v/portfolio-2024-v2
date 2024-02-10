@@ -230,25 +230,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let isNameValid = true;
+  let isEmailValid = true;
   let isMessageValid = true;
   let hasNameInteracted = false;
+  let hasEmailInteracted = false;
   let hasMessageInteracted = false;
 
   const formValidation = () => {
-    if (name.value.trim() === "" || message.value.trim() === "") {
+    if (
+      name.value.trim() === "" ||
+      message.value.trim() === "" ||
+      !isEmailValid
+    ) {
       name.classList.add("alert");
       message.classList.add("alert");
+      email.classList.add("alert");
       nameLabel.classList.add("active");
       messageLabel.classList.add("active");
+      emailLabel.classList.add("active");
       nameLabel.textContent = "Name is required!";
       messageLabel.textContent = "Message is required!";
+      messageLabel.textContent = "Email is required!";
       isNameValid = false;
       isMessageValid = false;
+      isEmailValid = false;
     } else {
       name.classList.remove("alert");
       message.classList.remove("alert");
-      nameLabel.textContent = "Name";
-      messageLabel.textContent = "Message";
+      email.classList.remove("alert");
+      nameLabel.textContent = "Name:";
+      messageLabel.textContent = "Message:";
+      messageLabel.textContent = "Email:";
     }
   };
 
@@ -267,6 +279,29 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     : "";
 
+  // Email input checking
+
+  email
+    ? email.addEventListener("input", () => {
+        const isValidEmail = (emailToCheck) => {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(emailToCheck);
+        };
+
+        if (isValidEmail(email.value.trim())) {
+          email.classList.remove("alert");
+          emailLabel.textContent = "Email";
+        } else if (email.value.trim().length < 1) {
+          email.classList.add("alert");
+          emailLabel.textContent = "Email is required!";
+        } else {
+          email.classList.add("alert");
+          emailLabel.textContent = "Invalid email!";
+        }
+
+        hasEmailInteracted = true;
+      })
+    : "";
   // Message input checking
   message
     ? message.addEventListener("input", () => {
@@ -298,6 +333,31 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     : "";
 
+  // Email blur checking
+
+  email
+    ? email.addEventListener("blur", () => {
+        const isValidEmail = (email) => {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(email);
+        };
+
+        if (!hasEmailInteracted && email.value.trim() === "") {
+          email.classList.add("alert");
+          emailLabel.classList.add("active");
+          emailLabel.textContent = "Email is required!";
+        } else if (!isValidEmail(email.value.trim())) {
+          email.classList.add("alert");
+          emailLabel.textContent = "Invalid email!";
+          emailLabel.classList.add("active");
+        } else {
+          email.classList.remove("alert");
+          emailLabel.textContent = "Email";
+        }
+
+        hasEmailInteracted = true;
+      })
+    : "";
   // Message blur checking
   message
     ? message.addEventListener("blur", () => {
