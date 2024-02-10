@@ -70,7 +70,7 @@
         <p class="under-dev">This page is still under development</p>
         <p class="intro-par get-in-touch">Get in Touch</p>
 
-        <form action="./send-mail.php" method="post" class="contact-form">
+        <form class="contact-form">
           <div class="form-top-container">
             <div class="form-field">
               <input
@@ -78,11 +78,10 @@
                 id="name"
                 name="name"
                 class="input"
-                required
                 aria-required="true"
                 aria-label="Your Name"
               />
-              <label for="name" class="form-label">Name:</label>
+              <label for="name" class="form-label name-label">Name:</label>
             </div>
             <div class="form-field">
               <input
@@ -90,11 +89,10 @@
                 id="email"
                 name="email"
                 class="input"
-                required
                 aria-required="true"
                 aria-label="Your Email"
               />
-              <label for="email" class="form-label">Email:</label>
+              <label for="email" class="form-label email-label">Email:</label>
             </div>
           </div>
           <div class="form-bottom-container">
@@ -104,11 +102,12 @@
                 name="message"
                 class="input"
                 rows="8"
-                required
                 aria-required="true"
                 aria-label="Your Message"
               ></textarea>
-              <label for="message" class="form-label">Message:</label>
+              <label for="message" class="form-label message-label"
+                >Message:</label
+              >
             </div>
             <div class="form-field">
               <input

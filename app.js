@@ -202,7 +202,62 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Form validation
+  const form = document.querySelector(".contact-form");
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const message = document.getElementById("message");
+  const submitButton = document.querySelector(".submit");
+  const nameLabel = document.querySelector(".name-label");
+  const emailLabel = document.querySelector(".email-label");
+  const messageLabel = document.querySelector(".message-label");
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  let isNameValid = true;
+  let hasNameInteracted = false;
+
+  const formValidation = () => {
+    if (name.value.trim() === "") {
+      name.classList.add("name-alert");
+      nameLabel.classList.add("active");
+      nameLabel.textContent = "Name is required!";
+      isNameValid = false;
+    } else {
+      name.classList.remove("name-alert");
+      nameLabel.textContent = "Name";
+    }
+    return isNameValid;
+  };
+
+  name.addEventListener("input", () => {
+    if (name.value.trim()) {
+      name.classList.remove("name-alert");
+      nameLabel.textContent = "Name";
+    } else if (name.value.length < 1) {
+      name.classList.add("name-alert");
+      nameLabel.textContent = "Name is required!";
+      nameLabel.classList.add("active");
+    }
+    hasNameInteracted = true;
+  });
+
+  name.addEventListener("blur", () => {
+    if (!hasNameInteracted && name.value === "") {
+      name.classList.add("name-alert");
+      nameLabel.classList.add("active");
+      nameLabel.textContent = "Name is required!";
+    } else if (name.value.length < 1) {
+      name.classList.add("name-alert");
+      nameLabel.textContent = "Name is required!";
+      nameLabel.classList.add("active");
+    }
+  });
+
+  form.addEventListener("submit", (e) => {
+    if (!formValidation()) {
+      e.preventDefault();
+    }
+  });
   // Scroll to top
 
   const scrollToTop = () => {

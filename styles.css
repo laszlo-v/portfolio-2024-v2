@@ -675,7 +675,7 @@ input[type="email"] {
 
 .under-dev {
   position: absolute;
-  top: 6rem;
+  top: 11rem;
   left: 50%;
   color: orangered;
   font-size: 1rem;
@@ -692,6 +692,10 @@ input[type="email"] {
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
+}
+
+.name-alert {
+  border: 1px solid red;
 }
 /******************************* Media queries *********************************/
 @media (min-width: 60rem) {
