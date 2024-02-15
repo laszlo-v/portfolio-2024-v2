@@ -212,6 +212,15 @@ li img {
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
 }
+#datawrapper-chart-BFm0E {
+  background-color: #e8edeb;
+  width: 80vw;
+  max-width: 40rem;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
 /***************************** About  ***************************/
 .education-card,
 .skills-card {
