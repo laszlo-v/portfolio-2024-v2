@@ -213,7 +213,7 @@ li img {
   -o-transition: all 0.3s;
 }
 #datawrapper-chart-BFm0E {
-  background-color: #e8edeb;
+  background-color: #e8edeb !important;
   width: 80vw;
   max-width: 40rem;
   display: block;
