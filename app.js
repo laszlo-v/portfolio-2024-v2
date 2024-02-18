@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
     url
   ) => {
     button.addEventListener("click", () => {
-      console.log("clicked");
       buttonSpan.textContent = buttonSpan.textContent === "OFF" ? "ON" : "OFF";
       if (buttonSpan.textContent === "ON") {
         buttonSpan.style.cssText = "color: #27ff82";
