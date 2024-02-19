@@ -7,6 +7,7 @@ import { gymSwitchHandler } from "./modules/gym.js";
 import { apisSwitchHandler } from "./modules/api.js";
 import { formSwitchHandler } from "./modules/form.js";
 import { numbersSwitchHandler } from "./modules/numbers.js";
+import { scroll } from "./modules/scroll-to-top.js";
 document.addEventListener("DOMContentLoaded", () => {
   /************************** aside toggle function ******************* */
 
@@ -174,19 +175,11 @@ document.addEventListener("DOMContentLoaded", () => {
     : "";
   /****************************************************************************** */
 
-  // Scroll to top
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-  window.addEventListener("scroll", () => {
-    const backToTopButton = document.querySelector(".back-to-top");
-    if (window.scrollY > 200) {
-      backToTopButton.style.display = "block";
-      backToTopButton.addEventListener("click", scrollToTop);
-    } else {
-      backToTopButton.style.display = "none";
-    }
-  });
+  // Scroll to top functionality
+
+  window.addEventListener("scroll", scroll);
+
+  /*************************************************************************** */
 
   // Contact form
   const inputs = document.querySelectorAll(".input");
