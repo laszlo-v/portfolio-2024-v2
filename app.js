@@ -1,9 +1,24 @@
 "use strict";
+import { asideToggle } from "./modules/aside-toggle.js";
+import { ozoneSwitchHandler } from "./modules/ozone-master.js";
+import { skorpioklimaSwitchHandler } from "./modules/skorpioklima.js";
+import { dentistSwitchHandler } from "./modules/dentist.js";
+import { gymSwitchHandler } from "./modules/gym.js";
+import { apisSwitchHandler } from "./modules/api.js";
+import { formSwitchHandler } from "./modules/form.js";
+import { numbersSwitchHandler } from "./modules/numbers.js";
 document.addEventListener("DOMContentLoaded", () => {
-  const button = document.querySelector(".menu-handler");
+  /************************** aside toggle function ******************* */
+
+  const asideButton = document.querySelector(".menu-handler");
   const aside = document.querySelector("aside");
   const logoMail = document.querySelector(".logo-mail");
   const main = document.querySelector("main");
+
+  // checking the existence of the aside button with ternary if true calling the module!
+  asideButton ? asideToggle(asideButton, aside, logoMail, main) : "";
+
+  /******************************************************************** */
 
   // Ozone Master
   const ozoneMasterURL = "https://ozonemaster.ie";
@@ -12,6 +27,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const ozoneImage = document.querySelector(".ozone-image");
   const ozoneMonitor = document.querySelector(".ozone-monitor");
   const ozoneMonitorIframeContainer = document.querySelector(".ozone-iframe");
+
+  // checking the existence of the switch button with ternary if true calling the module!
+  ozoneSwitch
+    ? ozoneSwitchHandler(
+        ozoneSwitch,
+        ozoneSwitchSpan,
+        ozoneImage,
+        ozoneMonitor,
+        ozoneMonitorIframeContainer,
+        ozoneMasterURL
+      )
+    : "";
+
+  /******************************************************************** */
 
   // Skorpiklima
   const skorpioklimaURL = "https://skorpioklima.hu";
@@ -25,99 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ".skorpioklima-iframe"
   );
 
-  // Dentist
-  const dentistURL = "https://lvpfdentist.website/";
-  const dentistSwitchSpan = document.querySelector(".skorpioklima-switch span");
-  const dentistSwitch = document.querySelector(".dentist-switch");
-  const dentistImage = document.querySelector(".dentist-image");
-  const dentistMonitor = document.querySelector(".dentist-monitor");
-  const dentistMonitorIframeContainer =
-    document.querySelector(".dentist-iframe");
-
-  // Gym
-  const gymURL = "https://lvpfgym.tech/";
-  const gymSwitchSpan = document.querySelector(".gym-switch span");
-  const gymSwitch = document.querySelector(".gym-switch");
-  const gymImage = document.querySelector(".gym-image");
-  const gymMonitor = document.querySelector(".gym-monitor");
-  const gymMonitorIframeContainer = document.querySelector(".gym-iframe");
-
-  // APIs
-  const apisURL = "https://lvpfapi.tech/";
-  const apisSwitchSpan = document.querySelector(".apis-switch span");
-  const apisSwitch = document.querySelector(".apis-switch");
-  const apisImage = document.querySelector(".apis-image");
-  const apisMonitor = document.querySelector(".apis-monitor");
-  const apisMonitorIframeContainer = document.querySelector(".apis-iframe");
-
-  // Form
-  const formURL = "https://lvpftimedform.tech/";
-  const formSwitchSpan = document.querySelector(".form-switch span");
-  const formSwitch = document.querySelector(".form-switch");
-  const formImage = document.querySelector(".form-image");
-  const formMonitor = document.querySelector(".form-monitor");
-  const formMonitorIframeContainer = document.querySelector(".form-iframe");
-
-  // Find numbers
-  const numbersURL = "https://lvpffindnumbers.tech/";
-  const numbersSwitchSpan = document.querySelector(".numbers-switch span");
-  const numbersSwitch = document.querySelector(".numbers-switch");
-  const numbersImage = document.querySelector(".numbers-image");
-  const numbersMonitor = document.querySelector(".numbers-monitor");
-  const numbersMonitorIframeContainer =
-    document.querySelector(".numbers-iframe");
-
-  button
-    ? button.addEventListener("click", () => {
-        aside.classList.toggle("toggle");
-        logoMail.classList.toggle("toggle");
-        main.classList.toggle("toggle");
-      })
-    : "";
-
-  const interactiveMode = (
-    button,
-    buttonSpan,
-    image,
-    monitor,
-    monitorIframeContainer,
-    url
-  ) => {
-    button.addEventListener("click", () => {
-      buttonSpan.textContent = buttonSpan.textContent === "OFF" ? "ON" : "OFF";
-      if (buttonSpan.textContent === "ON") {
-        buttonSpan.style.cssText = "color: #27ff82";
-      } else {
-        buttonSpan.style.cssText = "color: #22ddff";
-      }
-      image.classList.toggle("ozone-hide");
-      monitor.classList.toggle("ozone-monitor-show");
-
-      if (monitorIframeContainer.src === "") {
-        monitorIframeContainer.src = url;
-      } else {
-        monitorIframeContainer.src =
-          monitorIframeContainer.src === url ? null : url;
-      }
-    });
-  };
-
-  // Ozone Master
-
-  ozoneSwitch
-    ? interactiveMode(
-        ozoneSwitch,
-        ozoneSwitchSpan,
-        ozoneImage,
-        ozoneMonitor,
-        ozoneMonitorIframeContainer,
-        ozoneMasterURL
-      )
-    : "";
-
-  // Skorpioklima
+  // checking the existence of the switch button with ternary if true calling the module!
   skorpioklimaSwitch
-    ? interactiveMode(
+    ? skorpioklimaSwitchHandler(
         skorpioklimaSwitch,
         skorpioklimaSwitchSpan,
         skorpioklimaImage,
@@ -127,9 +66,20 @@ document.addEventListener("DOMContentLoaded", () => {
       )
     : "";
 
+  /********************************************************************* */
+
   // Dentist
+  const dentistURL = "https://lvpfdentist.website/";
+  const dentistSwitchSpan = document.querySelector(".dentist-switch span");
+  const dentistSwitch = document.querySelector(".dentist-switch");
+  const dentistImage = document.querySelector(".dentist-image");
+  const dentistMonitor = document.querySelector(".dentist-monitor");
+  const dentistMonitorIframeContainer =
+    document.querySelector(".dentist-iframe");
+
+  // checking the existence of the switch button with ternary if true calling the module!
   dentistSwitch
-    ? interactiveMode(
+    ? dentistSwitchHandler(
         dentistSwitch,
         dentistSwitchSpan,
         dentistImage,
@@ -139,9 +89,19 @@ document.addEventListener("DOMContentLoaded", () => {
       )
     : "";
 
+  /*********************************************************************** */
+
   // Gym
+  const gymURL = "https://lvpfgym.tech/";
+  const gymSwitchSpan = document.querySelector(".gym-switch span");
+  const gymSwitch = document.querySelector(".gym-switch");
+  const gymImage = document.querySelector(".gym-image");
+  const gymMonitor = document.querySelector(".gym-monitor");
+  const gymMonitorIframeContainer = document.querySelector(".gym-iframe");
+
+  // checking the existence of the switch button with ternary if true calling the module!
   gymSwitch
-    ? interactiveMode(
+    ? gymSwitchHandler(
         gymSwitch,
         gymSwitchSpan,
         gymImage,
@@ -151,9 +111,18 @@ document.addEventListener("DOMContentLoaded", () => {
       )
     : "";
 
+  /************************************************************************* */
   // APIs
+  const apisURL = "https://lvpfapi.tech/";
+  const apisSwitchSpan = document.querySelector(".apis-switch span");
+  const apisSwitch = document.querySelector(".apis-switch");
+  const apisImage = document.querySelector(".apis-image");
+  const apisMonitor = document.querySelector(".apis-monitor");
+  const apisMonitorIframeContainer = document.querySelector(".apis-iframe");
+
+  // checking the existence of the switch button with ternary if true calling the module!
   apisSwitch
-    ? interactiveMode(
+    ? apisSwitchHandler(
         apisSwitch,
         apisSwitchSpan,
         apisImage,
@@ -162,10 +131,18 @@ document.addEventListener("DOMContentLoaded", () => {
         apisURL
       )
     : "";
-
+  /************************************************************************** */
   // Form
+  const formURL = "https://lvpftimedform.tech/";
+  const formSwitchSpan = document.querySelector(".form-switch span");
+  const formSwitch = document.querySelector(".form-switch");
+  const formImage = document.querySelector(".form-image");
+  const formMonitor = document.querySelector(".form-monitor");
+  const formMonitorIframeContainer = document.querySelector(".form-iframe");
+
+  // checking the existence of the switch button with ternary if true calling the module!
   formSwitch
-    ? interactiveMode(
+    ? formSwitchHandler(
         formSwitch,
         formSwitchSpan,
         formImage,
@@ -174,10 +151,19 @@ document.addEventListener("DOMContentLoaded", () => {
         formURL
       )
     : "";
-
+  /************************************************************************** */
   // Find numbers
+  const numbersURL = "https://lvpffindnumbers.tech/";
+  const numbersSwitchSpan = document.querySelector(".numbers-switch span");
+  const numbersSwitch = document.querySelector(".numbers-switch");
+  const numbersImage = document.querySelector(".numbers-image");
+  const numbersMonitor = document.querySelector(".numbers-monitor");
+  const numbersMonitorIframeContainer =
+    document.querySelector(".numbers-iframe");
+
+  // checking the existence of the switch button with ternary if true calling the module!
   numbersSwitch
-    ? interactiveMode(
+    ? numbersSwitchHandler(
         numbersSwitch,
         numbersSwitchSpan,
         numbersImage,
@@ -186,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
         numbersURL
       )
     : "";
+  /****************************************************************************** */
 
   // Scroll to top
   const scrollToTop = () => {
@@ -303,6 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
         hasEmailInteracted = true;
       })
     : "";
+
   // Message input checking
   message
     ? message.addEventListener("input", () => {
