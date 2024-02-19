@@ -381,8 +381,7 @@ li img {
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
-  width: 80%;
-  height: auto;
+  max-height: 3.75rem;
 }
 .projects-card li img:hover {
   transform: scale(1.1) translateX(0.2rem);
