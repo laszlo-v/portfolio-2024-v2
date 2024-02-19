@@ -153,6 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
       )
     : "";
   /************************************************************************** */
+
   // Find numbers
   const numbersURL = "https://lvpffindnumbers.tech/";
   const numbersSwitchSpan = document.querySelector(".numbers-switch span");
