@@ -220,16 +220,16 @@ document.addEventListener("DOMContentLoaded", () => {
   let hasEmailInteracted = false;
   let hasMessageInteracted = false;
 
-  const formValidation = () => {
-    const isNameValid = nameValidation(name, nameLabel, isNameValid);
-    const isMessageValid = messageValidation(
-      message,
-      messageLabel,
-      isMessageValid
-    );
-    const isEmailValid = emailValidation(email, emailLabel, isEmailValid);
+  const validatedName = false;
+  const validatedMessage = false;
+  const validatedEmail = false;
 
-    return isNameValid && isMessageValid && isEmailValid;
+  const formValidation = () => {
+    validatedName = nameValidation(name, nameLabel, isNameValid);
+    validatedMessage = messageValidation(message, messageLabel, isMessageValid);
+    validatedEmail = emailValidation(email, emailLabel, isEmailValid);
+
+    return validatedName && validatedMessage && validatedEmail;
   };
 
   /*********************** Validating Name ************************/
