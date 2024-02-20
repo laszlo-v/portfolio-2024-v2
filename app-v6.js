@@ -220,9 +220,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let hasEmailInteracted = false;
   let hasMessageInteracted = false;
 
-  const validatedName = false;
-  const validatedMessage = false;
-  const validatedEmail = false;
+  let validatedName = false;
+  let validatedMessage = false;
+  let validatedEmail = false;
 
   const formValidation = () => {
     validatedName = nameValidation(name, nameLabel, isNameValid);
@@ -234,56 +234,79 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*********************** Validating Name ************************/
 
-  name.addEventListener("focus", () => {
-    hasNameInteracted = true;
-  });
-  name.addEventListener("input", () => {
-    hasNameInteracted = true;
-    nameValidation(name, nameLabel, isNameValid, hasNameInteracted);
-  });
-  name.addEventListener("blur", () => {
-    nameValidation(name, nameLabel, isNameValid, hasNameInteracted);
-  });
+  name
+    ? name.addEventListener("focus", () => {
+        hasNameInteracted = true;
+      })
+    : "";
+
+  name
+    ? name.addEventListener("input", () => {
+        hasNameInteracted = true;
+        nameValidation(name, nameLabel, isNameValid, hasNameInteracted);
+      })
+    : "";
+  name
+    ? name.addEventListener("blur", () => {
+        nameValidation(name, nameLabel, isNameValid, hasNameInteracted);
+      })
+    : "";
 
   /*************************************************************** */
 
   /*********************** Validating Message ************************/
 
-  message.addEventListener("focus", () => {
-    hasMessageInteracted = true;
-  });
-  message.addEventListener("input", () => {
-    hasMessageInteracted = true;
-    messageValidation(
-      message,
-      messageLabel,
-      isMessageValid,
-      hasMessageInteracted
-    );
-  });
-  message.addEventListener("blur", () => {
-    messageValidation(
-      message,
-      messageLabel,
-      isMessageValid,
-      hasMessageInteracted
-    );
-  });
+  message
+    ? message.addEventListener("focus", () => {
+        hasMessageInteracted = true;
+      })
+    : "";
+
+  message
+    ? message.addEventListener("input", () => {
+        hasMessageInteracted = true;
+        messageValidation(
+          message,
+          messageLabel,
+          isMessageValid,
+          hasMessageInteracted
+        );
+      })
+    : "";
+
+  message
+    ? message.addEventListener("blur", () => {
+        messageValidation(
+          message,
+          messageLabel,
+          isMessageValid,
+          hasMessageInteracted
+        );
+      })
+    : "";
 
   /*************************************************************** */
 
   /*********************** Validating Email ************************/
 
-  email.addEventListener("focus", () => {
-    hasEmailInteracted = true;
-  });
-  email.addEventListener("input", () => {
-    hasEmailInteracted = true;
-    emailValidation(email, emailLabel, isEmailValid, hasEmailInteracted);
-  });
-  email.addEventListener("blur", () => {
-    emailValidation(email, emailLabel, isEmailValid, hasEmailInteracted);
-  });
+  email
+    ? email.addEventListener("focus", () => {
+        hasEmailInteracted = true;
+      })
+    : "";
+
+  email
+    ? email.addEventListener("input", () => {
+        hasEmailInteracted = true;
+        emailValidation(email, emailLabel, isEmailValid, hasEmailInteracted);
+      })
+    : "";
+
+  email
+    ? email.addEventListener("blur", () => {
+        emailValidation(email, emailLabel, isEmailValid, hasEmailInteracted);
+      })
+    : "";
 
   /*************************************************************** */
   form
