@@ -8,6 +8,9 @@ import { apisSwitchHandler } from "./modules/api.js";
 import { formSwitchHandler } from "./modules/form.js";
 import { numbersSwitchHandler } from "./modules/numbers.js";
 import { scroll } from "./modules/scroll-to-top.js";
+import { nameValidation } from "./modules/email-validation/name.js";
+import { messageValidation } from "./modules/email-validation/message.js";
+import { emailValidation } from "./modules/email-validation/email.js";
 document.addEventListener("DOMContentLoaded", () => {
   /************************** aside toggle function ******************* */
 
@@ -202,159 +205,81 @@ document.addEventListener("DOMContentLoaded", () => {
   // Form validation
   const form = document.querySelector(".contact-form");
   const name = document.getElementById("name");
+  const nameLabel = document.querySelector(".name-label");
   const email = document.getElementById("email");
   const message = document.getElementById("message");
-  const nameLabel = document.querySelector(".name-label");
   const emailLabel = document.querySelector(".email-label");
   const messageLabel = document.querySelector(".message-label");
 
   //************************************************************* */
-  let isNameValid = true;
+
   let isEmailValid = true;
+  let isNameValid = false;
   let isMessageValid = true;
   let hasNameInteracted = false;
   let hasEmailInteracted = false;
   let hasMessageInteracted = false;
 
   const formValidation = () => {
-    if (
-      name.value.trim() === "" ||
-      message.value.trim() === "" ||
-      !isEmailValid
-    ) {
-      name.classList.add("alert");
-      message.classList.add("alert");
-      email.classList.add("alert");
-      nameLabel.classList.add("active");
-      messageLabel.classList.add("active");
-      emailLabel.classList.add("active");
-      nameLabel.textContent = "Name is required!";
-      messageLabel.textContent = "Message is required!";
-      emailLabel.textContent = "Email is required!";
-      isNameValid = false;
-      isMessageValid = false;
-      isEmailValid = false;
-    } else {
-      name.classList.remove("alert");
-      message.classList.remove("alert");
-      email.classList.remove("alert");
-      nameLabel.textContent = "Name:";
-      messageLabel.textContent = "Message:";
-      messageLabel.textContent = "Email:";
-    }
-
-    return isNameValid && isEmailValid && isEmailValid;
+    nameValidation(name, nameLabel, isNameValid);
+    messageValidation(message, messageLabel, isMessageValid);
+    emailValidation(email, emailLabel, isEmailValid);
   };
 
-  // Name input checking
-  name
-    ? name.addEventListener("input", () => {
-        if (name.value.trim()) {
-          name.classList.remove("alert");
-          nameLabel.textContent = "Name";
-        } else if (name.value.trim().length < 1) {
-          name.classList.add("alert");
-          nameLabel.textContent = "Name is required!";
-          nameLabel.classList.add("active");
-        }
-        hasNameInteracted = true;
-      })
-    : "";
+  /*********************** Validating Name ************************/
 
-  // Email input checking
+  name.addEventListener("focus", () => {
+    hasNameInteracted = true;
+  });
+  name.addEventListener("input", () => {
+    hasNameInteracted = true;
+    nameValidation(name, nameLabel, isNameValid, hasNameInteracted);
+  });
+  name.addEventListener("blur", () => {
+    nameValidation(name, nameLabel, isNameValid, hasNameInteracted);
+  });
 
-  email
-    ? email.addEventListener("input", () => {
-        const isValidEmail = (emailToCheck) => {
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return emailRegex.test(emailToCheck);
-        };
+  /*************************************************************** */
 
-        if (isValidEmail(email.value.trim())) {
-          email.classList.remove("alert");
-          emailLabel.textContent = "Email";
-        } else if (email.value.trim().length < 1) {
-          email.classList.add("alert");
-          emailLabel.textContent = "Email is required!";
-        } else {
-          email.classList.add("alert");
-          emailLabel.textContent = "Invalid email!";
-        }
+  /*********************** Validating Message ************************/
 
-        hasEmailInteracted = true;
-      })
-    : "";
+  message.addEventListener("focus", () => {
+    hasMessageInteracted = true;
+  });
+  message.addEventListener("input", () => {
+    hasMessageInteracted = true;
+    messageValidation(
+      message,
+      messageLabel,
+      isMessageValid,
+      hasMessageInteracted
+    );
+  });
+  message.addEventListener("blur", () => {
+    messageValidation(
+      message,
+      messageLabel,
+      isMessageValid,
+      hasMessageInteracted
+    );
+  });
 
-  // Message input checking
-  message
-    ? message.addEventListener("input", () => {
-        if (message.value.trim()) {
-          message.classList.remove("alert");
-          messageLabel.textContent = "Message";
-        } else if (message.value.trim().length < 1) {
-          message.classList.add("alert");
-          messageLabel.textContent = "Message is required!";
-          messageLabel.classList.add("active");
-        }
-        hasMessageInteracted = true;
-      })
-    : "";
+  /*************************************************************** */
 
-  // Name blur checking
-  name
-    ? name.addEventListener("blur", () => {
-        if (!hasNameInteracted && name.value.trim() === "") {
-          name.classList.add("alert");
-          nameLabel.classList.add("active");
-          nameLabel.textContent = "Name is required!";
-        } else if (name.value.trim().length < 1) {
-          name.classList.add("alert");
-          nameLabel.textContent = "Name is required!";
-          nameLabel.classList.add("active");
-        }
-        hasMessageInteracted = true;
-      })
-    : "";
+  /*********************** Validating Email ************************/
 
-  // Email blur checking
+  email.addEventListener("focus", () => {
+    hasEmailInteracted = true;
+  });
+  email.addEventListener("input", () => {
+    hasEmailInteracted = true;
+    emailValidation(email, emailLabel, isEmailValid, hasEmailInteracted);
+  });
+  email.addEventListener("blur", () => {
+    emailValidation(email, emailLabel, isEmailValid, hasEmailInteracted);
+  });
 
-  email
-    ? email.addEventListener("blur", () => {
-        const isValidEmail = (email) => {
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return emailRegex.test(email);
-        };
-
-        if (!hasEmailInteracted && email.value.trim() === "") {
-          email.classList.add("alert");
-          emailLabel.classList.add("active");
-          emailLabel.textContent = "Email is required!";
-        } else if (!isValidEmail(email.value.trim())) {
-          email.classList.add("alert");
-          emailLabel.textContent = "Invalid email!";
-          emailLabel.classList.add("active");
-        } else {
-          email.classList.remove("alert");
-          emailLabel.textContent = "Email";
-        }
-
-        hasEmailInteracted = true;
-      })
-    : "";
-  // Message blur checking
-  message
-    ? message.addEventListener("blur", () => {
-        if (!hasNameInteracted && message.value.trim() === "") {
-          message.classList.add("alert");
-          messageLabel.classList.add("active");
-          messageLabel.textContent = "Message is required!";
-        } else if (message.value.trim().length < 1) {
-          message.classList.add("alert");
-          messageLabel.textContent = "Message is required!";
-          messageLabel.classList.add("active");
-        }
-      })
-    : "";
+  /*************************************************************** */
   form
     ? form.addEventListener("submit", (e) => {
         if (!formValidation()) {
