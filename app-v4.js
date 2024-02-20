@@ -221,9 +221,15 @@ document.addEventListener("DOMContentLoaded", () => {
   let hasMessageInteracted = false;
 
   const formValidation = () => {
-    nameValidation(name, nameLabel, isNameValid);
-    messageValidation(message, messageLabel, isMessageValid);
-    emailValidation(email, emailLabel, isEmailValid);
+    const isNameValid = nameValidation(name, nameLabel, isNameValid);
+    const isMessageValid = messageValidation(
+      message,
+      messageLabel,
+      isMessageValid
+    );
+    const isEmailValid = emailValidation(email, emailLabel, isEmailValid);
+
+    return isNameValid && isMessageValid && isEmailValid;
   };
 
   /*********************** Validating Name ************************/
