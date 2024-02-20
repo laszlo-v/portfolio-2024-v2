@@ -556,7 +556,7 @@ li img {
 input,
 textarea {
   width: 80vw;
-  max-width: 22rem;
+  max-width: 20rem;
 }
 .form-label:hover,
 input:hover,
@@ -577,8 +577,8 @@ textarea:hover {
   -o-transition: all 0.5s;
 }
 input {
-  font-size: clamp(1rem, 2vw + 0.1rem, 1.8rem);
-  height: 3rem;
+  font-size: clamp(1rem, 1.5vw + 0.1rem, 1.8rem);
+  height: 2.5rem;
   margin-top: auto;
   padding-left: 0.5rem;
   letter-spacing: 0.2rem;
@@ -660,6 +660,7 @@ textarea:focus {
 }
 input[type="submit"] {
   border: 1px solid #22ddff;
+  border-bottom: 3px solid #22ddff;
   margin-top: 5rem;
   padding: 0.5rem 0;
   height: 4rem;
@@ -673,18 +674,25 @@ input[type="submit"] {
 input[type="submit"]:hover {
   letter-spacing: 0.6rem;
   background-color: #001e2b;
+  border: 1px solid #27ff82;
+  border-bottom: 3px solid #27ff82;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
+  border-radius: 1.5rem;
+  -webkit-border-radius: 1.5rem;
+  -moz-border-radius: 1.5rem;
+  -ms-border-radius: 1.5rem;
+  -o-border-radius: 1.5rem;
 }
 input[type="submit"]:active {
-  transform: translateY(0.5rem);
-  -webkit-transform: translateY(0.5rem);
-  -moz-transform: translateY(0.5rem);
-  -ms-transform: translateY(0.5rem);
-  -o-transform: translateY(0.5rem);
+  transform: translateY(0.25rem);
+  -webkit-transform: translateY(0.25rem);
+  -moz-transform: translateY(0.25rem);
+  -ms-transform: translateY(0.25rem);
+  -o-transform: translateY(0.25rem);
   transition: all 0.2s;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -776,12 +784,14 @@ input[type="submit"]:active {
   .switch {
     display: block;
   }
-
+  aside {
+    width: 15vw;
+  }
   /************* Contact **************/
 
   .get-in-touch {
     position: sticky;
-    top: 3rem;
+    top: 1rem;
   }
   .form-top-container,
   .form-bottom-container {
