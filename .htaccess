@@ -23,7 +23,7 @@
 
   # CSS, JavaScript
   ExpiresByType text/css "access plus 1 year"
-  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 day"
   ExpiresByType application/javascript "access plus 1 year"
 
   # Others
