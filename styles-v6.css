@@ -726,7 +726,7 @@ input[type="submit"]:active {
     height: 2.5rem;
   }
   aside {
-    width: 11rem;
+    width: 11rem !important;
     height: 100vh;
     background-color: #001e2b;
     transition: all 0.5s;
