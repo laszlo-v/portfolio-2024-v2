@@ -20,10 +20,10 @@
     />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles-v6.css" />
+    <link rel="stylesheet" href="styles-v7.css" />
 
     <!-- Scripts -->
-    <script src="app-v6.js" type="module" defer></script>
+    <script src="app-v7.js" type="module" defer></script>
   </head>
   <body>
     <header>
@@ -84,6 +84,84 @@
           <span>Please Note:</span> The interactive feature is only functional
           on screens with a width of 1200 pixels or more.
         </p>
+
+        <!-- DublinCleaning -->
+        <section class="projects-card">
+          <div class="project-name-button">
+            <h2>DublinCleaning</h2>
+            <button class="switch dublin-cleaning-switch">
+              Interactive mode <span>OFF</span>
+            </button>
+          </div>
+          <div class="dublin-cleaning-interactive">
+            <img
+              srcset="
+                ../images/dublin-cleaning-mobile.webp  620w,
+                ../images/dublin-cleaning.webp        1899w
+              "
+              sizes="(max-width: 768px) 620px, 1899px"
+              src="../images/dublin-cleaning.jpg"
+              loading="lazy"
+              alt="DublinCleaning"
+              class="dublin-cleaning-image"
+            />
+            <div class="dublin-cleaning-monitor">
+              <div class="iframe-container">
+                <iframe class="dublin-cleaning-iframe"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="objectives">
+            <p>Objectives:</p>
+            <p>To create a strong online presence for a startup</p>
+          </div>
+          <p class="projects-par">
+            A brand new website for a cleaning company located in Dublin
+          </p>
+
+          <p class="projects-par">Created with:</p>
+          <ul>
+            <li>
+              <img
+                src="./images/icons8-html5.svg"
+                alt="HTML5 icon"
+                title="HTML5"
+              />
+            </li>
+            <li>
+              <img
+                src="./images/file-type-scss.svg"
+                alt="SCSS icon"
+                title="SCSS"
+              />
+            </li>
+            <li>
+              <img
+                src="./images/css3-original-wordmark.svg"
+                alt="CSS icon"
+                title="CSS-CSS3"
+              />
+            </li>
+
+            <li>
+              <img
+                src="./images/javascript-js.svg"
+                alt="JavaScript icon"
+                title="JavaScript"
+              />
+            </li>
+            <li>
+              <img src="./images/php.svg" alt="PHP icon" title="PHP" />
+            </li>
+          </ul>
+          <a
+            href="https://dublincleaning.ie"
+            target="_blank"
+            rel="noopener"
+            class="visit-website"
+            >Visit Website</a
+          >
+        </section>
 
         <!-- Ozone Master -->
 
@@ -176,7 +254,11 @@
               <img src="./images/regex.svg" alt="regex icon" title="RegEx" />
             </li>
           </ul>
-          <a href="https://ozonemaster.ie" target="_blank" class="visit-website"
+          <a
+            href="https://ozonemaster.ie"
+            target="_blank"
+            rel="noopener"
+            class="visit-website"
             >Visit Website</a
           >
         </section>
@@ -265,6 +347,7 @@
             href="https://skorpioklima.hu"
             target="_blank"
             class="visit-website"
+            rel="noopener"
             >Visit Website</a
           >
         </section>
@@ -346,6 +429,7 @@
             href="https://lvpfdentist.website/"
             target="_blank"
             class="visit-website"
+            rel="noopener"
             >Visit Website</a
           >
         </section>
@@ -422,7 +506,11 @@
               />
             </li>
           </ul>
-          <a href="https://lvpfgym.tech/" target="_blank" class="visit-website"
+          <a
+            href="https://lvpfgym.tech/"
+            target="_blank"
+            rel="noopener"
+            class="visit-website"
             >Visit Website</a
           >
         </section>
@@ -523,7 +611,11 @@
               />
             </li>
           </ul>
-          <a href="https://lvpfapi.tech/" target="_blank" class="visit-website"
+          <a
+            href="https://lvpfapi.tech/"
+            target="_blank"
+            rel="noopener"
+            class="visit-website"
             >Visit Website</a
           >
         </section>
@@ -604,6 +696,7 @@
             href="https://lvpftimedform.tech/"
             target="_blank"
             class="visit-website"
+            rel="noopener"
             >Visit Website</a
           >
         </section>
@@ -691,6 +784,7 @@
             href="https://lvpffindnumbers.tech/"
             target="_blank"
             class="visit-website"
+            rel="noopener"
             >Visit Website</a
           >
         </section>

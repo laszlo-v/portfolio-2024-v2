@@ -24,6 +24,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /******************************************************************** */
 
+
+    // DublinCleaning
+    const dublinCleaningURL = "https://dublincleaning.ie";
+    const dublinCleaningSwitch = document.querySelector(".dublin-cleaning-switch");
+    const dublinCleaningSwitchSpan = document.querySelector(".dublin-cleaning-switch span");
+    const dublinCleaningImage = document.querySelector(".dublin-cleaning-image");
+    const dublinCleaningMonitor = document.querySelector(".dublin-cleaning-monitor");
+    const dublinCleaningMonitorIframeContainer = document.querySelector(".dublin-cleaning-iframe");
+  
+    // checking the existence of the switch button with ternary if true calling the module!
+    dublinCleaningSwitch
+      ? ozoneSwitchHandler(
+          dublinCleaningSwitch,
+          dublinCleaningSwitchSpan,
+          dublinCleaningImage,
+          dublinCleaningMonitor,
+          dublinCleaningMonitorIframeContainer,
+          dublinCleaningURL
+        )
+      : "";
+  
+    /******************************************************************** */
+
   // Ozone Master
   const ozoneMasterURL = "https://ozonemaster.ie";
   const ozoneSwitch = document.querySelector(".ozone-switch");

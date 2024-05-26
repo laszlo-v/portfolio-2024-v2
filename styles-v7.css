@@ -486,7 +486,8 @@ li img {
 .gym-image,
 .apis-image,
 .form-image,
-.numbers-image {
+.numbers-image,
+.dublin-cleaning-image {
   display: block;
 }
 .ozone-hide,
@@ -495,7 +496,8 @@ li img {
 .gym-hide,
 .apis-hide,
 .form-hide,
-.numbers-hide {
+.numbers-hide,
+.dublin-cleaning-hide {
   display: none;
 }
 .ozone-monitor,
@@ -504,7 +506,8 @@ li img {
 .gym-monitor,
 .apis-monitor,
 .form-monitor,
-.numbers-monitor {
+.numbers-monitor,
+.dublin-cleaning-monitor {
   display: none;
   position: relative;
   width: 100%;
@@ -518,7 +521,8 @@ li img {
 .gym-monitor-show,
 .apis-monitor-show,
 .form-monitor-show,
-.numbers-monitor-show {
+.numbers-monitor-show,
+.dublin-cleaning-monitor-show {
   display: block;
 }
 .iframe-container {
